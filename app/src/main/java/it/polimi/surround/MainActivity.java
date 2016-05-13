@@ -1,7 +1,12 @@
 package it.polimi.surround;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Environment;
@@ -37,7 +42,7 @@ import java.util.UUID;
 import it.polimi.surround.util.DistanceEstimator;
 
 
-public class MainActivity extends AppCompatActivity implements UIActivity{
+public class MainActivity extends AppCompatActivity implements UIActivity, SensorEventListener{
 
     public static final Map<String, List<String>> PLACES_BY_BEACONS;
     public static final Map<String, double[]> LOCATION_BY_BEACONS;
@@ -53,6 +58,20 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
     private int counter;
     private int lastGrid = R.id.G00;
     private Location deviceLocation;
+
+    private Location prevPosition;
+    private SensorManager manager;
+    private Sensor compass;
+    private Sensor accelerometer;
+    private File debug;
+    private File pointsFile;
+    private FileWriter dbgfw;
+    private FileWriter ptsfw;
+    private BufferedWriter dbgbw;
+    private BufferedWriter ptsbw;
+    float [] compassData;
+    float [] accData;
+    float[] deviceData;
 
     // TODO: replace "<major>:<minor>" strings to match your own beacons.
     static {
@@ -74,9 +93,9 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
         PLACES_BY_BEACONS = Collections.unmodifiableMap(placesByBeacons);
         Map<String, double[]> locationByBeacons = new HashMap<>();
         locationByBeacons.put("42730:37336", new double[] {-2.3,    0,      0,      -89,    0});//B
-        locationByBeacons.put("29491:46151", new double[] {0,       2.3,    0,      -89,    0});//F
+        //locationByBeacons.put("29491:46151", new double[] {0,       2.3,    0,      -89,    0});//F
         locationByBeacons.put("26943:13368", new double[] {2.3,     0,      0,      -89,    0});//E
-        locationByBeacons.put("32505:29466", new double[] {0,       -2.3,   0,      -79,    0});//D mint
+        //locationByBeacons.put("32505:29466", new double[] {0,       -2.3,   0,      -79,    0});//D mint
         locationByBeacons.put("34061:44153", new double[] {0,       0,      1.05,   -79,    0});//A
         locationByBeacons.put("48147:52400", new double[] {0,        0,      0,      -79,    0});//C
         LOCATION_BY_BEACONS = Collections.unmodifiableMap(locationByBeacons);
@@ -85,11 +104,12 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
     {
         results = new TreeMap<String, Map<Integer, String>>();
         blackList = new ArrayList<String>();
-        //blackList.add("26943:13368");//E
-        //blackList.add("32505:29466");//D mint
-        //blackList.add("29491:46151");//F
-        //blackList.add("34061:44153");//A
-        blackList.add("48147:52400");//C
+        //blackList.add("26943:13368");//E - Beacon 1
+        blackList.add("32505:29466");//D mint
+        blackList.add("29491:46151");//F
+        //blackList.add("34061:44153");//A - Beacon 2
+        //blackList.add("48147:52400");//C - Beacon 4
+        //blackList.add("42730:37336");//Beacon 3
         de = new DistanceEstimator(this);
         File sd = Environment.getExternalStorageDirectory();
         result = new File(sd,  "Surround.txt");
@@ -99,9 +119,24 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //add debug
+        debug = new File(sd, "Debug.txt");
+        pointsFile = new File(sd, "PointResult.txt");
+        try {
+            dbgfw = new FileWriter(debug, true);
+            dbgbw = new BufferedWriter(dbgfw);
+            ptsfw = new FileWriter(pointsFile, true);
+            ptsbw = new BufferedWriter(ptsfw);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         deviceLocation = new Location("location");
         deviceLocation.setLatitude(0);
         deviceLocation.setLongitude(0);
+        //set starting position
+        prevPosition = new Location("location");
+        prevPosition.setLatitude(5);
+        prevPosition.setLongitude(0);
     }
 
     public void startExperiment(View v) {
@@ -198,8 +233,12 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
         }
         filterBeacons(beacons, TRILATERATION_N);
         try{
-            Location eLocation = de.estimateLocation(beacons, deviceLocation);
+            Location eLocation = de.estimateLocation(beacons, deviceLocation, prevPosition,
+                                                                    dbgbw, deviceData, accData);
             if(eLocation != null){
+                prevPosition = eLocation;
+                ptsbw.write(eLocation.getLatitude() + "\t "+ eLocation.getLongitude()+ "\n");
+                ptsbw.flush();
                 drawGrid(eLocation);
                 storeResult(eLocation, counter);
                 Log.d("Airport", "Beacon: " + String.format("%f %f", eLocation.getLatitude(), eLocation.getLongitude()));
@@ -291,17 +330,25 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
         super.onCreate(savedInstanceState);
 
         setContentView(it.polimi.surround.R.layout.activity_main);
+
+        manager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        compass = manager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        accelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        deviceData = new float[3];
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         SystemRequirementsChecker.checkWithDefaultDialogs(this);
+        manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI);
+        manager.registerListener(this, compass, SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        manager.unregisterListener(this);
     }
 
     @Override
@@ -325,4 +372,28 @@ public class MainActivity extends AppCompatActivity implements UIActivity{
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER){
+            accData = event.values;
+        }
+        if (event.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD){
+            compassData = event.values;
+        }
+        if (accData != null && compassData != null){
+            float[] R = new float[9];
+            float[] I = new float[9];
+            boolean success = manager.getRotationMatrix(R, I, accData, compassData);
+            if (success){
+                float[] orientation = new float[3];
+                manager.getOrientation(R, orientation);
+                deviceData = orientation;
+            }
+        }
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {    }
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jeromq-0.3.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.zeromq/jeromq/0.3.5/39a79082570d114bb5433762e836e4dd9c38b03d/jeromq-0.3.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.zeromq/jeromq/0.3.5/6be6755bd14ad78a568b961c6d615c97db089fbd/jeromq-0.3.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

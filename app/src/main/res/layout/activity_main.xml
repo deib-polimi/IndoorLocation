@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:weightSum="1">
 
         <EditText
             android:id="@+id/ref_distance"
@@ -42,13 +43,14 @@
             android:layout_height="50px" />
 
         <TextView android:id="@+id/lat_lng_val" android:layout_width="match_parent"
-            android:layout_height="100px" />
+            android:layout_height="100px"
+            android:layout_weight="0.37" />
 
         <TextView android:id="@+id/rssi" android:text="@string/rssi" android:layout_width="match_parent"
             android:layout_height="50px" />
 
         <TextView android:id="@+id/rssi_val" android:layout_width="match_parent"
-            android:layout_height="112dp" />
+            android:layout_height="61dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"

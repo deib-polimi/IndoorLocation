@@ -3,6 +3,13 @@
     package="it.polimi.surround" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dependency>
+        <groupId>org.zeromq</groupId>
+        <artifactId>jeromq</artifactId>
+        <version>0.3.5</version>
+    </dependency>
 
     <application
         android:name="it.polimi.surround.SurroundApplication"
