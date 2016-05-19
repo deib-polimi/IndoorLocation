@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
 
     public static final Map<String, List<String>> PLACES_BY_BEACONS;
     public static final Map<String, double[]> LOCATION_BY_BEACONS;
-    public static final short TRILATERATION_N = 4;
+    public static final short TRILATERATION_N = 6;
     private BeaconManager beaconManager;
     private final List<String> blackList;
     private Map <String, Map<Integer, String>> results;
@@ -92,12 +92,13 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
         }});
         PLACES_BY_BEACONS = Collections.unmodifiableMap(placesByBeacons);
         Map<String, double[]> locationByBeacons = new HashMap<>();
-        locationByBeacons.put("42730:37336", new double[] {-2.3,    0,      0,      -89,    0});//B
-        //locationByBeacons.put("29491:46151", new double[] {0,       2.3,    0,      -89,    0});//F
-        locationByBeacons.put("26943:13368", new double[] {2.3,     0,      0,      -89,    0});//E
-        //locationByBeacons.put("32505:29466", new double[] {0,       -2.3,   0,      -79,    0});//D mint
-        locationByBeacons.put("34061:44153", new double[] {0,       0,      1.05,   -79,    0});//A
-        locationByBeacons.put("48147:52400", new double[] {0,        0,      0,      -79,    0});//C
+        //updated position of beacons in 6 beacon topology
+        locationByBeacons.put("26943:13368", new double[] {2,  7,   0,   -89,   0});//E
+        locationByBeacons.put("29491:46151", new double[] {5,  7,   0,   -89,   0});//F
+        locationByBeacons.put("32505:29466", new double[] {2,  4,   0,   -79,   0});//D mint
+        locationByBeacons.put("34061:44153", new double[] {5,  4,   0,   -79,   0});//A
+        locationByBeacons.put("42730:37336", new double[] {2,  1,   0,   -89,   0});//B
+        locationByBeacons.put("48147:52400", new double[] {5,  1,   0,   -79,   0});//C
         LOCATION_BY_BEACONS = Collections.unmodifiableMap(locationByBeacons);
     }
 
@@ -105,8 +106,8 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
         results = new TreeMap<String, Map<Integer, String>>();
         blackList = new ArrayList<String>();
         //blackList.add("26943:13368");//E - Beacon 1
-        blackList.add("32505:29466");//D mint
-        blackList.add("29491:46151");//F
+        //blackList.add("32505:29466");//D mint
+        //blackList.add("29491:46151");//F
         //blackList.add("34061:44153");//A - Beacon 2
         //blackList.add("48147:52400");//C - Beacon 4
         //blackList.add("42730:37336");//Beacon 3
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
         //set starting position
         prevPosition = new Location("location");
         prevPosition.setLatitude(5);
-        prevPosition.setLongitude(0);
+        prevPosition.setLongitude(4);
     }
 
     public void startExperiment(View v) {
@@ -233,11 +234,13 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
         }
         filterBeacons(beacons, TRILATERATION_N);
         try{
+            dbgbw.write("starting from position " + prevPosition.getLatitude()+ ", "+prevPosition.getLongitude()+"\n");
             Location eLocation = de.estimateLocation(beacons, deviceLocation, prevPosition,
                                                                     dbgbw, deviceData, accData);
             if(eLocation != null){
                 prevPosition = eLocation;
-                ptsbw.write(eLocation.getLatitude() + "\t "+ eLocation.getLongitude()+ "\n");
+                ptsbw.write(DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()) + "\t" +
+                        (int) eLocation.getLatitude() + "\t "+ (int) eLocation.getLongitude()+ "\n");
                 ptsbw.flush();
                 drawGrid(eLocation);
                 storeResult(eLocation, counter);
