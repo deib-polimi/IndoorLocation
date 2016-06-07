@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:contentDescription="Menù partenza dalla porta">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/destination"
+        android:id="@+id/destinationText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Dove vuoi andare?" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fromDoorToWindow"
+        android:src="@drawable/window"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentEnd="false"
+        android:background="@color/background_floating_material_light"
+        android:layout_below="@+id/destinationText"
+        android:contentDescription="Destinazione finestra" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fromDoorToDesk"
+        android:src="@drawable/desk"
+        android:layout_centerHorizontal="true"
+        android:background="@color/background_floating_material_light"
+        android:layout_below="@+id/fromDoorToWindow"
+        android:layout_marginTop="50dp"
+        android:contentDescription="Destinazione scrivania" />
+
+</RelativeLayout>

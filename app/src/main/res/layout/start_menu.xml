@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="it.polimi.surround.MainActivity"
+    android:id="@+id/start_view"
+    android:contentDescription="Menù Iniziale">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/startFrom"
+        android:id="@+id/startText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Dove ti trovi?" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/buttonDoor"
+        android:src="@drawable/door"
+        android:layout_below="@+id/startText"
+        android:layout_centerHorizontal="true"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="10dp"
+        android:background="@color/background_material_light"
+        android:onClick="doorClicked"
+        android:contentDescription="Partenza dall&apos;ingresso" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonWindow"
+        android:src="@drawable/window"
+        android:layout_below="@+id/buttonDoor"
+        android:layout_centerHorizontal="true"
+        android:background="@color/background_material_light"
+        android:layout_marginTop="10dp"
+        android:onClick="windowClicked"
+        android:contentDescription="Partenza dalla finestra" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDesk"
+        android:src="@drawable/desk"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/background_material_light"
+        android:layout_marginBottom="10dp"
+        android:onClick="deskClicked"
+        android:layout_below="@+id/buttonWindow"
+        android:contentDescription="Partenza dalla scrivania" />
+</RelativeLayout>

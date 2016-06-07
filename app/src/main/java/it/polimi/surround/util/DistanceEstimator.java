@@ -241,10 +241,10 @@ public class DistanceEstimator {
         selectedIndexes[1] = secondIndex;
         selectedIndexes[2] = lastIndex;
 
-        ui.printText(R.id.rssi_val,
-                rssi + "\n" +
-                dist
-        );
+//        ui.printText(R.id.rssi_val,
+//                rssi + "\n" +
+//                dist
+//        );
 /*
         return getLocationWithTrilateration(
                 positions[bestIndex], positions[secondIndex], positions[lastIndex],
@@ -269,7 +269,8 @@ public class DistanceEstimator {
         }
 //        return getGridLocation6BVector(signals, previousPosition, accX, accY, selectedIndexes);
 
-        return getInductiveLocation(signals,previousPosition, beaconDimension, selectedIndexes);
+      return getInductiveLocation(signals,previousPosition, beaconDimension, selectedIndexes);
+
     }
 
     private double [] getLatLng(double [] p){
@@ -669,20 +670,20 @@ public class DistanceEstimator {
         }
         for (int k = 0; k < beaconDimension; k++){
             //looking at strongest signal
-            if (signals[k] > (double) -70 ){
-                for (int j = 0; j < beaconDimension; j++){
-                    //between two beacons
-                    if ((j != k) && (signals[j] > (double) -70)){
+            if (signals[k] > (double) -71 ){
+/*                for (int j = 0; j < beaconDimension; j++){
+                    //between two beacons, return rounded down position
+                    if ((j != k) && (signals[j] > (double) -71)){
                         bw.write("maybe between two beacons \n");
                         switch (k){
                             case 0: switch (j){
-                                        case 1: foundLocation.setLatitude(3.5);
+                                        case 1: foundLocation.setLatitude(3);
                                                 foundLocation.setLongitude(7);
                                                 bw.flush();
                                                 return foundLocation;
 
                                         case 2: foundLocation.setLatitude(2);
-                                                foundLocation.setLongitude(5.5);
+                                                foundLocation.setLongitude(5);
                                                 bw.flush();
                                                 return foundLocation;
                                         default:break;
@@ -690,20 +691,20 @@ public class DistanceEstimator {
 
                             case 1: switch (j){
                                         case 2: foundLocation.setLatitude(5);
-                                                foundLocation.setLongitude(5.5);
+                                                foundLocation.setLongitude(5);
                                                 bw.flush();
                                                 return foundLocation;
                                         default:break;
                                     }break;
 
                             case 2: switch (j){
-                                        case 3: foundLocation.setLatitude(3.5);
+                                        case 3: foundLocation.setLatitude(3);
                                                 foundLocation.setLongitude(4);
                                             bw.flush();
                                                 return foundLocation;
 
                                         case 4: foundLocation.setLatitude(2);
-                                                foundLocation.setLongitude(2.5);
+                                                foundLocation.setLongitude(2);
                                             bw.flush();
                                                 return foundLocation;
                                         default:break;
@@ -711,7 +712,7 @@ public class DistanceEstimator {
 
                             case 3: switch (j){
                                         case 5: foundLocation.setLatitude(5);
-                                                foundLocation.setLongitude(2.5);
+                                                foundLocation.setLongitude(2);
                                             bw.flush();
                                                 return foundLocation;
 
@@ -719,7 +720,7 @@ public class DistanceEstimator {
                                     }break;
 
                             case 4: switch (j){
-                                        case 5: foundLocation.setLatitude(3.5);
+                                        case 5: foundLocation.setLatitude(3);
                                                  foundLocation.setLongitude(1);
                                             bw.flush();
                                                  return foundLocation;
@@ -730,7 +731,7 @@ public class DistanceEstimator {
                         }
                     }
                 }//end second for cycle
-                if (signals[k] > (double) -62){
+*/                if (signals[k] > (double) -62){
                     // over a beacon
                     switch (k) {
                         case 0:
@@ -788,7 +789,7 @@ public class DistanceEstimator {
                             return foundLocation;
 
                     }
-                }else if (signals[k] > (double) -66){
+                }else if (signals[k] > (double) -67){
                     // check near points at 1meter
                     bw.write("one meter from beacon:  " + k +  " \n");
                     bw.flush();
@@ -2131,6 +2132,106 @@ public class DistanceEstimator {
         return foundLocation;
     }
 
+    public int distanceFromBeacon(int beaconIndex, List<Beacon> beacons, BufferedWriter dbgbw, Location deviceLoc){
+        int distance = 0;
+
+        bw = dbgbw;
+        //set the number of visible beacons
+        int beaconDimension = 1;
+
+        if(beacons.size() < 3) {
+            //return null;
+        }
+        else if (beacons.size() == 4){
+            beaconDimension = 4;
+        }
+        else if (beacons.size() == 6){
+            beaconDimension = 6;
+        }
+        //beacon positioning data
+        double [][] positions = new double [beaconDimension][2];
+        double [] distances = new double[beaconDimension];
+        double [] signals = new double[beaconDimension];
+        double [] selectedSignals = new double[3];
+        double bestSignal = -100;
+        int bestIndex = 0;
+        int [] selectedIndexes = new int[3];
+        int [] previousPosition = new int[2];
+        String rssi = "";
+        String dist = "";
+        //device orientation data (radiant, positive counter-clockwise)
+
+        for(int i = 0; i < beaconDimension; i++){
+            Beacon b = beacons.get(i);
+            double [] bData = MainActivity.LOCATION_BY_BEACONS.get(b.getMajor() + ":" + b.getMinor());
+            b = createBeacon(b, bData, deviceLoc);
+            double [] p  = getLatLng(bData);
+            Double d = calculate2DProjection(Utils.computeAccuracy(b), bData);
+            positions[i] = p;
+            distances[i] = d;
+            if (beaconDimension == 4){
+                System.out.println("found "+ beaconDimension + " beacons \n");
+                //4 beacon topology
+                switch (b.getMajor()){
+                    case 26943: signals[0] = b.getRssi();
+                        break;
+                    case 34061: signals[1] = b.getRssi();
+                        break;
+                    case 42730: signals[2] = b.getRssi();
+                        break;
+                    case 48147: signals[3] = b.getRssi();
+                        break;
+                }
+            }else if (beaconDimension == 6) {
+                System.out.println("found "+ beaconDimension + " beacons \n");
+                //6 beacon topology
+                switch (b.getMajor()) {
+                    case 26943:
+                        signals[0] = b.getRssi();
+                        break;
+                    case 29491:
+                        signals[1] = b.getRssi();
+                        break;
+                    case 32505:
+                        signals[2] = b.getRssi();
+                        break;
+                    case 34061:
+                        signals[3] = b.getRssi();
+                        break;
+                    case 42730:
+                        signals[4] = b.getRssi();
+                        break;
+                    case 48147:
+                        signals[5] = b.getRssi();
+                        break;
+                }
+            }
+            //signals[i] = b.getRssi();
+            rssi += String.format("%d: %d ", b.getMajor(), b.getRssi());
+            dist += String.format("%d: %f ", b.getMajor(), d);
+
+        }
+
+        for (int k=0; k< beaconDimension; k++){
+
+            if (signals[k] > bestSignal){
+                bestSignal = signals[k];
+                bestIndex = k;
+
+            }
+        }
+
+        if(signals[beaconIndex] > -62){
+            distance = 0;
+        }else if(signals[beaconIndex] > -70){
+            distance = 1;
+        }else if (beaconIndex == bestIndex){
+            distance = 2;
+        }else{
+            distance = 3;
+        }
+        return distance;
+    }
 
 
     private double [][] createMapMatrix4B(){

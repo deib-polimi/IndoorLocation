@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:contentDescription="Menù dalla porta alla scrivania">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/path"
+        android:id="@+id/pathText"
+        android:layout_above="@+id/pathToDesk"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:contentDescription="Scegli un percorso" />
+
+    <ImageButton
+        android:layout_width="300dp"
+        android:layout_height="225dp"
+        android:id="@+id/pathToDesk"
+        android:src="@drawable/path_to_desk"
+        android:scaleType="fitXY"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="Percorso unico" />
+
+</RelativeLayout>

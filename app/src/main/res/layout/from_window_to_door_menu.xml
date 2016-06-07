@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:contentDescription="Menù dalla finestra alla porta">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/path"
+        android:id="@+id/pathText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Scegli un percorso" />
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:id="@+id/path1window"
+        android:src="@drawable/path_1_window"
+        android:cropToPadding="false"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/pathText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="Percorso numero uno" />
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:id="@+id/path2window"
+        android:src="@drawable/path_2_window"
+        android:scaleType="fitXY"
+        android:clickable="true"
+        android:layout_alignStart="@+id/path3window"
+        android:layout_below="@+id/path1window"
+        android:layout_marginTop="5dp"
+        android:contentDescription="Percorso numero 2" />
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:id="@+id/path3window"
+        android:src="@drawable/path_3_window"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="false"
+        android:scaleType="fitXY"
+        android:baselineAlignBottom="false"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/path2window"
+        android:contentDescription="percorso numero 3" />
+</RelativeLayout>
