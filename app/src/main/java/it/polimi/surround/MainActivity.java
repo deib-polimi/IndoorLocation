@@ -1447,8 +1447,19 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 if (distance == 0){
                     prevPosition.setLatitude(5);
                     prevPosition.setLongitude(1);
+                    speakWords("Gira a destra");
                     counter = 0;
                 }else if (distance == 1){
+                    counter = 0;
+                }else if (distance > 1){
+                    counter++;
+                }break;
+            case 9: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(0);
+                    counter = 0;
+                }else if (distance == 0){
                     counter = 0;
                 }else if (distance > 1){
                     counter++;
@@ -1586,8 +1597,19 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 if (distance == 0){
                     prevPosition.setLatitude(5);
                     prevPosition.setLongitude(1);
+                    speakWords("Continua dritto");
                     counter = 0;
                 }else if (distance == 1){
+                    counter = 0;
+                }else if (distance > 1){
+                    counter++;
+                }break;
+            case 9: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(0);
+                    counter = 0;
+                }else if (distance == 0){
                     counter = 0;
                 }else if (distance > 1){
                     counter++;
@@ -1725,8 +1747,19 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 if (distance == 0){
                     prevPosition.setLatitude(5);
                     prevPosition.setLongitude(1);
+                    speakWords("Continua dritto");
                     counter = 0;
                 }else if (distance == 1){
+                    counter = 0;
+                }else if (distance > 1){
+                    counter++;
+                }break;
+            case 9: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(0);
+                    counter = 0;
+                }else if (distance == 0){
                     counter = 0;
                 }else if (distance > 1){
                     counter++;
@@ -1908,8 +1941,19 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 if (distance == 0){
                     prevPosition.setLatitude(5);
                     prevPosition.setLongitude(1);
+                    speakWords("Gira a destra");
                     counter = 0;
                 }else if (distance == 1){
+                    counter = 0;
+                }else if (distance > 1){
+                    counter++;
+                }break;
+            case 12: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(0);
+                    counter = 0;
+                }else if (distance == 0){
                     counter = 0;
                 }else if (distance > 1){
                     counter++;
@@ -2093,6 +2137,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 0:
                             clearButtons(usedButtons);
                             button = usedButtons.get(0);
+                            previousPoint = 0;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2100,6 +2145,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(1);
+                            previousPoint = 1;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2107,6 +2153,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(2);
+                            previousPoint = 2;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2114,6 +2161,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2121,6 +2169,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(4);
+                            previousPoint = 4;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2130,6 +2179,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 4) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(5);
+                        previousPoint = 5;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2139,6 +2189,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 4) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(6);
+                        previousPoint = 6;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2149,6 +2200,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(7);
+                            previousPoint = 7;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2156,6 +2208,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(8);
+                            previousPoint = 8;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2163,6 +2216,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(9);
+                            previousPoint = 9;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2199,6 +2253,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 0:
                             clearButtons(usedButtons);
                             button = usedButtons.get(0);
+                            previousPoint = 0;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2206,6 +2261,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(1);
+                            previousPoint = 1;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2213,6 +2269,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(2);
+                            previousPoint = 2;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2220,6 +2277,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2227,6 +2285,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(4);
+                            previousPoint = 4;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2234,6 +2293,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(5);
+                            previousPoint = 5;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2241,6 +2301,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(6);
+                            previousPoint = 6;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2248,6 +2309,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(7);
+                            previousPoint = 7;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2257,6 +2319,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 7) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(8);
+                        previousPoint = 8;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2266,6 +2329,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 7) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(9);
+                        previousPoint = 9;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2302,6 +2366,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 0:
                             clearButtons(usedButtons);
                             button = usedButtons.get(0);
+                            previousPoint = 0;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2309,6 +2374,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(1);
+                            previousPoint = 1;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2319,6 +2385,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(2);
+                            previousPoint = 2;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2326,6 +2393,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(12);
+                            previousPoint = 12;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2336,6 +2404,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2343,6 +2412,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(11);
+                            previousPoint = 11;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2353,6 +2423,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(4);
+                            previousPoint = 4;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2360,6 +2431,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(5);
+                            previousPoint = 5;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2367,6 +2439,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(6);
+                            previousPoint = 6;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2374,6 +2447,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(7);
+                            previousPoint = 7;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2381,6 +2455,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(8);
+                            previousPoint = 8;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2388,6 +2463,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(9);
+                            previousPoint = 9;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2395,6 +2471,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(10);
+                            previousPoint = 10;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2430,6 +2507,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 1) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(9);
+                        previousPoint = 9;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2439,6 +2517,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 1) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(8);
+                        previousPoint = 8;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2448,6 +2527,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 1) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(7);
+                        previousPoint = 7;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2458,6 +2538,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(6);
+                            previousPoint = 6;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2465,6 +2546,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(5);
+                            previousPoint = 5;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2472,6 +2554,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(4);
+                            previousPoint = 4;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2479,6 +2562,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2486,6 +2570,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(2);
+                            previousPoint = 2;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2493,6 +2578,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(1);
+                            previousPoint = 1;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2500,6 +2586,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(0);
+                            previousPoint = 0;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2536,6 +2623,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(9);
+                            previousPoint = 9;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2543,6 +2631,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(8);
+                            previousPoint = 8;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2550,6 +2639,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(7);
+                            previousPoint = 7;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2557,6 +2647,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(6);
+                            previousPoint = 6;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2566,6 +2657,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 4) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(5);
+                        previousPoint = 5;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2575,6 +2667,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 4) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(4);
+                        previousPoint = 4;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2585,6 +2678,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2592,6 +2686,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(2);
+                            previousPoint = 2;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2599,6 +2694,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(1);
+                            previousPoint = 1;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2606,6 +2702,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(0);
+                            previousPoint = 0;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2642,6 +2739,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(9);
+                            previousPoint = 9;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2649,6 +2747,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(8);
+                            previousPoint = 8;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2656,6 +2755,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(7);
+                            previousPoint = 7;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2663,6 +2763,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(6);
+                            previousPoint = 6;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2670,6 +2771,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(5);
+                            previousPoint = 5;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2677,6 +2779,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(4);
+                            previousPoint = 4;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2684,6 +2787,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2693,6 +2797,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 7) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(2);
+                        previousPoint = 2;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2702,6 +2807,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 7) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(1);
+                        previousPoint = 1;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2711,6 +2817,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                     if ((int) prevPosition.getLongitude() == 7) {
                         clearButtons(usedButtons);
                         button = usedButtons.get(0);
+                        previousPoint = 0;
                         button.setBackgroundColor(Color.GREEN);
                         //found = true;
                         //counter = 0;
@@ -2747,6 +2854,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(12);
+                            previousPoint = 12;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2754,6 +2862,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(0);
+                            previousPoint = 0;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2764,6 +2873,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(11);
+                            previousPoint = 11;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2771,6 +2881,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(1);
+                            previousPoint = 1;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2781,6 +2892,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(10);
+                            previousPoint = 10;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2788,6 +2900,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(2);
+                            previousPoint = 2;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2798,6 +2911,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 1:
                             clearButtons(usedButtons);
                             button = usedButtons.get(9);
+                            previousPoint = 9;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2805,6 +2919,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 2:
                             clearButtons(usedButtons);
                             button = usedButtons.get(8);
+                            previousPoint = 8;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2812,6 +2927,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 3:
                             clearButtons(usedButtons);
                             button = usedButtons.get(7);
+                            previousPoint = 7;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2819,6 +2935,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 4:
                             clearButtons(usedButtons);
                             button = usedButtons.get(6);
+                            previousPoint = 6;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2826,6 +2943,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 5:
                             clearButtons(usedButtons);
                             button = usedButtons.get(5);
+                            previousPoint = 5;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2833,6 +2951,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 6:
                             clearButtons(usedButtons);
                             button = usedButtons.get(4);
+                            previousPoint = 4;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
@@ -2840,6 +2959,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         case 7:
                             clearButtons(usedButtons);
                             button = usedButtons.get(3);
+                            previousPoint = 3;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
