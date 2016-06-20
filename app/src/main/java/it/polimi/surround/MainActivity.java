@@ -321,11 +321,12 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 destination.setLongitude(7);
 
                 ImageButton path_to_desk = (ImageButton) findViewById(R.id.pathToDesk);
+                ImageButton path_2_to_desk = (ImageButton) findViewById(R.id.path2ToDesk);
 
                 path_to_desk.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        System.out.println("prova percorso scrivania ");
+                        System.out.println("prova percorso scrivania 1");
                         counter = 0;
                         pathName = "door-desk";
                         ArrayList<Button> usedButtons = new ArrayList<Button>();
@@ -360,6 +361,52 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                         usedButtons.add(pos26);
                         Button pos27 = (Button) findViewById(R.id.pos27);
                         usedButtons.add(pos27);
+                        Button pos37 = (Button) findViewById(R.id.pos37);
+                        usedButtons.add(pos37);
+                        Button pos47 = (Button) findViewById(R.id.pos47);
+                        usedButtons.add(pos47);
+                        //set to grey
+                        setButtons(usedButtons);
+                        System.out.println("pronto a cercare posizione");
+                        calculatePosition(usedButtons);
+
+                    }
+                });
+
+                path_2_to_desk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        System.out.println("prova percorso scrivania 2");
+                        counter = 0;
+                        pathName = "door-desk-2";
+                        ArrayList<Button> usedButtons = new ArrayList<Button>();
+                        setContentView(R.layout.path_background_grid);
+                        //set start
+                        Button pos50 = (Button) findViewById(R.id.pos50);
+//                        pos50.setVisibility(View.VISIBLE);
+//                        pos50.setBackgroundColor(Color.RED);
+                        usedButtons.add(pos50);
+                        //set finish
+                        Button pos57 = (Button) findViewById(R.id.pos57);
+                        pos57.setVisibility(View.VISIBLE);
+                        pos57.setBackgroundColor(Color.BLUE);
+
+                        Button pos51 = (Button) findViewById(R.id.pos51);
+                        usedButtons.add(pos51);
+                        Button pos52 = (Button) findViewById(R.id.pos52);
+                        usedButtons.add(pos52);
+                        Button pos42 = (Button) findViewById(R.id.pos42);
+                        usedButtons.add(pos42);
+                        Button pos32 = (Button) findViewById(R.id.pos32);
+                        usedButtons.add(pos32);
+                        Button pos33 = (Button) findViewById(R.id.pos33);
+                        usedButtons.add(pos33);
+                        Button pos34 = (Button) findViewById(R.id.pos34);
+                        usedButtons.add(pos34);
+                        Button pos35 = (Button) findViewById(R.id.pos35);
+                        usedButtons.add(pos35);
+                        Button pos36 = (Button) findViewById(R.id.pos36);
+                        usedButtons.add(pos36);
                         Button pos37 = (Button) findViewById(R.id.pos37);
                         usedButtons.add(pos37);
                         Button pos47 = (Button) findViewById(R.id.pos47);
@@ -645,6 +692,9 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 case "door-desk": calculatePathToDesk(beacons);
                                         pathToDeskUI(usedButtons);
                     break;
+                case "door-desk-2": calculatePathToDesk2(beacons);
+                                        path2ToDeskUI(usedButtons);
+                    break;
                 case "window-door-1": calculatePath1Window(beacons);
                                         path1WindowUI(usedButtons);
                     break;
@@ -672,6 +722,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
             e.printStackTrace();
         }
     }
+
 
     private void calculatePath1(List<Beacon> beacons) {
 
@@ -1312,6 +1363,150 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                 }else if (distance == 1){
                     counter = 0;
                 }else if (distance > 1){
+                    counter++;
+                }
+        }
+    }
+
+    private void calculatePathToDesk2(List<Beacon> beacons){
+
+        int distance;
+
+        switch (previousPoint){
+            case 0: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 0){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(1);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else if (distance == 1) {
+                    if (!start){
+                        speakWords("Sei al punto di partenza, avanza");
+                        start = true;
+                    }
+                    counter = 0;
+                }else if (distance > 1){
+                    counter++;
+                }break;
+            case 1: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(2);
+                    speakWords("Gira a sinistra");
+                    counter = 0;
+                }else if (distance == 0){
+                    counter = 0;
+                }else if (distance > 1){
+                    counter++;
+                }break;
+            case 2: distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    counter = 0;
+                }else if (distance == 2){
+                    prevPosition.setLatitude(4);
+                    prevPosition.setLongitude(2);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else if (distance == 3 || distance == 0){
+                    counter++;
+                }break;
+            case 3: distance = de.distanceFromBeacon(4, beacons,dbgbw, deviceLocation );
+                if (distance == 2){
+                    prevPosition.setLatitude(3);
+                    prevPosition.setLongitude(2);
+                    speakWords("Gira a destra");
+                    counter = 0;
+                }else{
+                    distance = de.distanceFromBeacon(5, beacons,dbgbw, deviceLocation );
+                    if (distance == 2) {
+                        counter = 0;
+                    }else {
+                        counter++;
+                    }
+                }break;
+            case 4: distance = de.distanceFromBeacon(2, beacons,dbgbw, deviceLocation );
+                if (distance == 2){
+                    prevPosition.setLatitude(3);
+                    prevPosition.setLongitude(3);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else {
+                    distance = de.distanceFromBeacon(4, beacons,dbgbw, deviceLocation );
+                    if (distance == 2) {
+                        counter = 0;
+                    }else {
+                        counter++;
+                    }
+                }break;
+            case 5: distance = de.distanceFromBeacon(2, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(3);
+                    prevPosition.setLongitude(4);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else if (distance == 2){
+                    counter = 0;
+                } else {
+                    counter++;
+                }break;
+            case 6: distance = de.distanceFromBeacon(2, beacons,dbgbw, deviceLocation );
+                if (distance == 2){
+                    prevPosition.setLatitude(3);
+                    prevPosition.setLongitude(5);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else if (distance == 1){
+                    counter = 0;
+                }else {
+                    counter++;
+                }break;
+            case 7: distance = de.distanceFromBeacon(0, beacons,dbgbw, deviceLocation );
+                if (distance == 2){
+                    prevPosition.setLatitude(3);
+                    prevPosition.setLongitude(6);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else {
+                    distance = de.distanceFromBeacon(2, beacons,dbgbw, deviceLocation );
+                    if (distance == 2) {
+                        counter = 0;
+                    }else {
+                        counter++;
+                    }
+                }break;
+            case 8: distance = de.distanceFromBeacon(0, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(3);
+                    prevPosition.setLongitude(7);
+                    speakWords("Gira a destra");
+                    counter = 0;
+                }else if (distance == 2){
+                    counter = 0;
+                }else{
+                    counter++;
+                }break;
+            case 9: distance = de.distanceFromBeacon(1, beacons,dbgbw, deviceLocation );
+                if (distance == 1){
+                    prevPosition.setLatitude(4);
+                    prevPosition.setLongitude(7);
+                    speakWords("Continua dritto");
+                    counter = 0;
+                }else {
+                    distance = de.distanceFromBeacon(0, beacons,dbgbw, deviceLocation );
+                    if (distance == 0 || distance == 3) {
+                        counter++;
+                    }else {
+                        counter = 0;
+                    }
+                }break;
+            case 10: distance = de.distanceFromBeacon(1, beacons, dbgbw, deviceLocation);
+                if (distance == 0){
+                    prevPosition.setLatitude(5);
+                    prevPosition.setLongitude(7);
+                    counter = 0;
+                }else if (distance == 1){
+                    counter = 0;
+                }else{
                     counter++;
                 }
         }
@@ -2472,6 +2667,128 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
                             clearButtons(usedButtons);
                             button = usedButtons.get(10);
                             previousPoint = 10;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                    }break;
+                default:break;
+                //if (!found) {
+                //      counter++;
+
+                //    }
+            }if (counter == 4) {
+                Toast.makeText(getBaseContext(), "Ti sei perso, torna indietro!", Toast.LENGTH_SHORT).show();
+                System.out.println("Ti sei perso, torna indietro!");
+            }
+        }else {
+            usedButtons.removeAll(usedButtons);
+            stopCalculation();
+            endJourney();
+        }
+    }
+
+    private void path2ToDeskUI(ArrayList<Button> usedButtons) {
+
+        System.out.println("inizio calcolo...da (" + prevPosition.getLatitude() + "," + prevPosition.getLongitude() + ") \n");
+
+        System.out.println("posizione aggiornata a (" + prevPosition.getLatitude() + "," + prevPosition.getLongitude() + ") \n");
+        found = false;
+        Button button;
+        if (prevPosition.getLatitude() != destination.getLatitude() || prevPosition.getLongitude() != destination.getLongitude()){
+            switch ((int) prevPosition.getLatitude()) {
+                case 5:
+                    switch ((int) prevPosition.getLongitude()) {
+                        case 0:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(0);
+                            previousPoint = 0;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 1:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(1);
+                            previousPoint = 1;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 2:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(2);
+                            previousPoint = 2;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                    }break;
+                case 4:
+                    switch ((int) prevPosition.getLongitude()) {
+                        case 2:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(3);
+                            previousPoint = 3;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 7:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(10);
+                            previousPoint = 10;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                    }break;
+                case 3:
+                    switch ((int) prevPosition.getLongitude()) {
+                        case 2:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(4);
+                            previousPoint = 4;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 3:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(5);
+                            previousPoint = 5;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 4:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(6);
+                            previousPoint = 6;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 5:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(7);
+                            previousPoint = 7;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 6:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(8);
+                            previousPoint = 8;
+                            button.setBackgroundColor(Color.GREEN);
+                            //found = true;
+                            //counter = 0;
+                            break;
+                        case 7:
+                            clearButtons(usedButtons);
+                            button = usedButtons.get(9);
+                            previousPoint = 9;
                             button.setBackgroundColor(Color.GREEN);
                             //found = true;
                             //counter = 0;
