@@ -10,13 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325ddcf2-c619-479e-a5d6-0ff26a59e1c0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/Buttons.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/CalculatePath.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/PathUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/DistanceEstimator.java" afterPath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/DistanceEstimator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IndoorLocation.iws" />
@@ -53,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/DistanceEstimator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <caret line="2134" column="71" selection-start-line="2134" selection-start-column="71" selection-end-line="2134" selection-end-column="71" />
               <folding>
                 <element signature="e#957#1004#0" expanded="false" />
                 <element signature="method#DistanceEstimator#0;class#DistanceEstimator#0" expanded="false" />
@@ -62,66 +60,36 @@
                 <element signature="method#calculateAngleFactor#0;class#DistanceEstimator#0" expanded="false" />
                 <element signature="e#13881#13926#0" expanded="false" />
                 <element signature="method#distanceFromBeacon#0;class#DistanceEstimator#0" expanded="false" />
-                <element signature="e#115360#115406#0" expanded="false" />
+                <element signature="e#115338#115384#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.9010239">
-              <caret line="3402" column="0" selection-start-line="3402" selection-start-column="0" selection-end-line="3402" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="422" column="51" selection-start-line="422" selection-start-column="51" selection-end-line="422" selection-end-column="51" />
               <folding>
                 <element signature="initializer##0;class#MainActivity#0" expanded="false" />
                 <element signature="initializer##1;class#MainActivity#0" expanded="false" />
-                <element signature="method#doorClicked#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#6271#13830#0" expanded="true" />
-                <element signature="e#6859#9144#0" expanded="true" />
-                <element signature="e#9143#9144#0" expanded="true" />
-                <element signature="e#13829#13830#0" expanded="true" />
-                <element signature="method#windowClicked#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#deskClicked#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePosition#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#31417#31781#0" expanded="true" />
-                <element signature="e#31780#31781#0" expanded="true" />
-                <element signature="e#31943#32126#0" expanded="true" />
-                <element signature="e#32125#32126#0" expanded="true" />
-                <element signature="method#findPosition#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePath1#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePath2#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePath3#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePathToDesk#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePathToDesk2#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePath1Window#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePath2Window#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePath3Window#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#calculatePathFromDesk#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#stopCalculation#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path1UI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path2UI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path3UI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#pathToDeskUI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path2ToDeskUI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path1WindowUI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path2WindowUI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#path3WindowUI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#pathFromDeskUI#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#endJourney#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#clearButtons#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#setButtons#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#calculatePosition#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#6846#7209#0" expanded="true" />
+                <element signature="e#7208#7209#0" expanded="true" />
+                <element signature="e#7371#7554#0" expanded="true" />
+                <element signature="e#7553#7554#0" expanded="true" />
                 <element signature="method#startExperiment#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#148791#149077#0" expanded="true" />
-                <element signature="e#149076#149077#0" expanded="true" />
-                <element signature="e#149360#149543#0" expanded="true" />
-                <element signature="e#149542#149543#0" expanded="true" />
+                <element signature="e#7762#8048#0" expanded="true" />
+                <element signature="e#8047#8048#0" expanded="true" />
+                <element signature="e#8331#8514#0" expanded="true" />
+                <element signature="e#8513#8514#0" expanded="true" />
                 <element signature="method#stopExperiment#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#setPosition#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#151587#151647#0" expanded="false" />
+                <element signature="e#9815#9875#0" expanded="false" />
                 <element signature="method#nearBeacons#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#storeResult#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#153883#153940#0" expanded="false" />
+                <element signature="e#12121#12178#0" expanded="false" />
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
@@ -130,6 +98,93 @@
                 <element signature="method#onSensorChanged#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onInit#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#17726#17727#0" expanded="true" />
+                <element signature="e#17793#17794#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Buttons.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/Buttons.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="initializer##0;class#Buttons#0" expanded="false" />
+                <element signature="method#doorClicked#0;class#Buttons#0" expanded="false" />
+                <element signature="e#2450#10036#0" expanded="true" />
+                <element signature="e#3047#5338#0" expanded="true" />
+                <element signature="e#3382#3390#0" expanded="true" />
+                <element signature="e#5337#5338#0" expanded="true" />
+                <element signature="e#10035#10036#0" expanded="true" />
+                <element signature="e#10082#15788#0" expanded="true" />
+                <element signature="e#10626#13288#0" expanded="true" />
+                <element signature="e#10966#10974#0" expanded="true" />
+                <element signature="e#13287#13288#0" expanded="true" />
+                <element signature="e#13342#15762#0" expanded="true" />
+                <element signature="e#13684#13692#0" expanded="true" />
+                <element signature="e#15761#15762#0" expanded="true" />
+                <element signature="e#15787#15788#0" expanded="true" />
+                <element signature="method#windowClicked#0;class#Buttons#0" expanded="false" />
+                <element signature="e#16184#23829#0" expanded="true" />
+                <element signature="e#19163#21461#0" expanded="true" />
+                <element signature="e#19505#19513#0" expanded="true" />
+                <element signature="e#21460#21461#0" expanded="true" />
+                <element signature="e#21512#23803#0" expanded="true" />
+                <element signature="e#21847#21855#0" expanded="true" />
+                <element signature="e#23802#23803#0" expanded="true" />
+                <element signature="e#23828#23829#0" expanded="true" />
+                <element signature="e#24675#27337#0" expanded="true" />
+                <element signature="e#25014#25022#0" expanded="true" />
+                <element signature="e#27336#27337#0" expanded="true" />
+                <element signature="method#findPosition#0;class#Buttons#0" expanded="false" />
+                <element signature="method#endJourney#0;class#Buttons#0" expanded="false" />
+                <element signature="method#clearButtons#0;class#Buttons#0" expanded="false" />
+                <element signature="method#setButtons#0;class#Buttons#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CalculatePath.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/CalculatePath.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.17406143">
+              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+              <folding>
+                <element signature="initializer##0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePath1#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePath2#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePath3#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePathToDesk#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePathToDesk2#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePath1Window#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePath2Window#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePath3Window#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#calculatePathFromDesk#0;class#CalculatePath#0" expanded="false" />
+                <element signature="method#setPosition#0;class#CalculatePath#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PathUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/PathUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1053" column="62" selection-start-line="1053" selection-start-column="62" selection-end-line="1053" selection-end-column="62" />
+              <folding>
+                <element signature="method#path1UI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#path2UI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#path3UI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#pathToDeskUI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#path2ToDeskUI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#path1WindowUI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#path2WindowUI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#path3WindowUI#0;class#PathUI#0" expanded="false" />
+                <element signature="method#pathFromDeskUI#0;class#PathUI#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -140,8 +195,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -155,6 +210,7 @@
         <option value="nicholas91.colombo@me.com" />
       </list>
     </option>
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -1778,8 +1834,11 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/end_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/from_door_to_desk_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/path_background_grid_example.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/DistanceEstimator.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/CalculatePath.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/PathUI.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/Buttons.java" />
       </list>
     </option>
   </component>
@@ -1845,6 +1904,28 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IndoorLocation" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1900,6 +1981,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IndoorLocation" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -1912,7 +2003,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="192.168.57.101:5555" />
     <property name="SearchEverywhereHistoryKey" value="nearBe&#9;PSI&#9;JAVA://it.polimi.surround.MainActivity#nearBeacons&#10;prevPo&#9;PSI&#9;JAVA://it.polimi.surround.MainActivity#prevPosition" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_624c8416ee51e205b3f892d1d904e06e6f3c57c8/cmd/git.exe" />
     <property name="lastFolderRoot" value="$USER_HOME$/Desktop/politecnico/Tesi LM/data/images/path 2 to desk.png" />
     <property name="algorithm" value="Scalr" />
     <property name="method" value="Automatic" />
@@ -1920,6 +2011,8 @@
     <property name="resolutions" value="HDPI&#10;XXXHDPI&#10;MDPI&#10;XXHDPI&#10;XHDPI" />
     <property name="format" value="PNG" />
     <property name="FullScreen" value="true" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -2165,11 +2258,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32902297" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32247558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2192,7 +2286,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message Pane" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754344" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2225,7 +2318,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2242,7 +2335,7 @@
             <element signature="method#calculateAngleFactor#0;class#DistanceEstimator#0" expanded="false" />
             <element signature="e#13881#13926#0" expanded="false" />
             <element signature="method#distanceFromBeacon#0;class#DistanceEstimator#0" expanded="false" />
-            <element signature="e#115360#115406#0" expanded="false" />
+            <element signature="e#115338#115384#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2254,52 +2347,22 @@
           <folding>
             <element signature="initializer##0;class#MainActivity#0" expanded="false" />
             <element signature="initializer##1;class#MainActivity#0" expanded="false" />
-            <element signature="method#doorClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6271#13830#0" expanded="true" />
-            <element signature="e#6859#9144#0" expanded="true" />
-            <element signature="e#9143#9144#0" expanded="true" />
-            <element signature="e#13829#13830#0" expanded="true" />
-            <element signature="method#windowClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#deskClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePosition#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#31417#31781#0" expanded="true" />
-            <element signature="e#31780#31781#0" expanded="true" />
-            <element signature="e#31943#32126#0" expanded="true" />
-            <element signature="e#32125#32126#0" expanded="true" />
-            <element signature="method#findPosition#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath1#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath2#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath3#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePathToDesk#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePathToDesk2#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath1Window#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath2Window#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath3Window#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePathFromDesk#0;class#MainActivity#0" expanded="false" />
             <element signature="method#stopCalculation#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path1UI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path2UI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path3UI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#pathToDeskUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path2ToDeskUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path1WindowUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path2WindowUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path3WindowUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#pathFromDeskUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#endJourney#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#clearButtons#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setButtons#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#calculatePosition#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#6846#7209#0" expanded="true" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7371#7554#0" expanded="true" />
+            <element signature="e#7553#7554#0" expanded="true" />
             <element signature="method#startExperiment#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#148791#149077#0" expanded="true" />
-            <element signature="e#149076#149077#0" expanded="true" />
-            <element signature="e#149360#149543#0" expanded="true" />
-            <element signature="e#149542#149543#0" expanded="true" />
+            <element signature="e#7762#8048#0" expanded="true" />
+            <element signature="e#8047#8048#0" expanded="true" />
+            <element signature="e#8331#8514#0" expanded="true" />
+            <element signature="e#8513#8514#0" expanded="true" />
             <element signature="method#stopExperiment#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setPosition#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#151587#151647#0" expanded="false" />
+            <element signature="e#9815#9875#0" expanded="false" />
             <element signature="method#nearBeacons#0;class#MainActivity#0" expanded="false" />
             <element signature="method#storeResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#153883#153940#0" expanded="false" />
+            <element signature="e#12121#12178#0" expanded="false" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
@@ -2308,6 +2371,8 @@
             <element signature="method#onSensorChanged#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onInit#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#17726#17727#0" expanded="true" />
+            <element signature="e#17793#17794#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2503,17 +2568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="32" column="49" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/path_1_window_background.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -2552,7 +2606,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/DistanceEstimator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="2134" column="71" selection-start-line="2134" selection-start-column="71" selection-end-line="2134" selection-end-column="71" />
           <folding>
             <element signature="e#957#1004#0" expanded="false" />
             <element signature="method#DistanceEstimator#0;class#DistanceEstimator#0" expanded="false" />
@@ -2561,8 +2615,78 @@
             <element signature="method#calculateAngleFactor#0;class#DistanceEstimator#0" expanded="false" />
             <element signature="e#13881#13926#0" expanded="false" />
             <element signature="method#distanceFromBeacon#0;class#DistanceEstimator#0" expanded="false" />
-            <element signature="e#115360#115406#0" expanded="false" />
+            <element signature="e#115338#115384#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="422" column="51" selection-start-line="422" selection-start-column="51" selection-end-line="422" selection-end-column="51" />
+          <folding>
+            <element signature="initializer##0;class#MainActivity#0" expanded="false" />
+            <element signature="initializer##1;class#MainActivity#0" expanded="false" />
+            <element signature="method#stopCalculation#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#calculatePosition#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#6846#7209#0" expanded="true" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7371#7554#0" expanded="true" />
+            <element signature="e#7553#7554#0" expanded="true" />
+            <element signature="method#startExperiment#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#7762#8048#0" expanded="true" />
+            <element signature="e#8047#8048#0" expanded="true" />
+            <element signature="e#8331#8514#0" expanded="true" />
+            <element signature="e#8513#8514#0" expanded="true" />
+            <element signature="method#stopExperiment#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#9815#9875#0" expanded="false" />
+            <element signature="method#nearBeacons#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#storeResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#12121#12178#0" expanded="false" />
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onSensorChanged#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onInit#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#17726#17727#0" expanded="true" />
+            <element signature="e#17793#17794#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1292639">
+          <caret line="37" column="43" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/desk_menu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/door_menu.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2574,67 +2698,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/PathUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9010239">
-          <caret line="3402" column="0" selection-start-line="3402" selection-start-column="0" selection-end-line="3402" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1053" column="62" selection-start-line="1053" selection-start-column="62" selection-end-line="1053" selection-end-column="62" />
           <folding>
-            <element signature="initializer##0;class#MainActivity#0" expanded="false" />
-            <element signature="initializer##1;class#MainActivity#0" expanded="false" />
-            <element signature="method#doorClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6271#13830#0" expanded="true" />
-            <element signature="e#6859#9144#0" expanded="true" />
-            <element signature="e#9143#9144#0" expanded="true" />
-            <element signature="e#13829#13830#0" expanded="true" />
-            <element signature="method#windowClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#deskClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePosition#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#31417#31781#0" expanded="true" />
-            <element signature="e#31780#31781#0" expanded="true" />
-            <element signature="e#31943#32126#0" expanded="true" />
-            <element signature="e#32125#32126#0" expanded="true" />
-            <element signature="method#findPosition#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath1#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath2#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath3#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePathToDesk#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePathToDesk2#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath1Window#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath2Window#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePath3Window#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#calculatePathFromDesk#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#stopCalculation#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path1UI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path2UI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path3UI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#pathToDeskUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path2ToDeskUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path1WindowUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path2WindowUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#path3WindowUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#pathFromDeskUI#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#endJourney#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#clearButtons#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setButtons#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startExperiment#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#148791#149077#0" expanded="true" />
-            <element signature="e#149076#149077#0" expanded="true" />
-            <element signature="e#149360#149543#0" expanded="true" />
-            <element signature="e#149542#149543#0" expanded="true" />
-            <element signature="method#stopExperiment#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setPosition#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#151587#151647#0" expanded="false" />
-            <element signature="method#nearBeacons#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#storeResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#153883#153940#0" expanded="false" />
-            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onSensorChanged#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onInit#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#path1UI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#path2UI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#path3UI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#pathToDeskUI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#path2ToDeskUI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#path1WindowUI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#path2WindowUI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#path3WindowUI#0;class#PathUI#0" expanded="false" />
+            <element signature="method#pathFromDeskUI#0;class#PathUI#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/Buttons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="initializer##0;class#Buttons#0" expanded="false" />
+            <element signature="method#doorClicked#0;class#Buttons#0" expanded="false" />
+            <element signature="e#2450#10036#0" expanded="true" />
+            <element signature="e#3047#5338#0" expanded="true" />
+            <element signature="e#3382#3390#0" expanded="true" />
+            <element signature="e#5337#5338#0" expanded="true" />
+            <element signature="e#10035#10036#0" expanded="true" />
+            <element signature="e#10082#15788#0" expanded="true" />
+            <element signature="e#10626#13288#0" expanded="true" />
+            <element signature="e#10966#10974#0" expanded="true" />
+            <element signature="e#13287#13288#0" expanded="true" />
+            <element signature="e#13342#15762#0" expanded="true" />
+            <element signature="e#13684#13692#0" expanded="true" />
+            <element signature="e#15761#15762#0" expanded="true" />
+            <element signature="e#15787#15788#0" expanded="true" />
+            <element signature="method#windowClicked#0;class#Buttons#0" expanded="false" />
+            <element signature="e#16184#23829#0" expanded="true" />
+            <element signature="e#19163#21461#0" expanded="true" />
+            <element signature="e#19505#19513#0" expanded="true" />
+            <element signature="e#21460#21461#0" expanded="true" />
+            <element signature="e#21512#23803#0" expanded="true" />
+            <element signature="e#21847#21855#0" expanded="true" />
+            <element signature="e#23802#23803#0" expanded="true" />
+            <element signature="e#23828#23829#0" expanded="true" />
+            <element signature="e#24675#27337#0" expanded="true" />
+            <element signature="e#25014#25022#0" expanded="true" />
+            <element signature="e#27336#27337#0" expanded="true" />
+            <element signature="method#findPosition#0;class#Buttons#0" expanded="false" />
+            <element signature="method#endJourney#0;class#Buttons#0" expanded="false" />
+            <element signature="method#clearButtons#0;class#Buttons#0" expanded="false" />
+            <element signature="method#setButtons#0;class#Buttons#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/it/polimi/surround/util/CalculatePath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17406143">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding>
+            <element signature="initializer##0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePath1#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePath2#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePath3#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePathToDesk#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePathToDesk2#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePath1Window#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePath2Window#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePath3Window#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#calculatePathFromDesk#0;class#CalculatePath#0" expanded="false" />
+            <element signature="method#setPosition#0;class#CalculatePath#0" expanded="false" />
           </folding>
         </state>
       </provider>

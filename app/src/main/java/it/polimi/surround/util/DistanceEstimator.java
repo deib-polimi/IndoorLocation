@@ -2132,7 +2132,7 @@ public class DistanceEstimator {
 //        return foundLocation;
 //    }
 
-    public int distanceFromBeacon(int beaconIndex, List<Beacon> beacons, BufferedWriter dbgbw, Location deviceLoc){
+    public int distanceFromBeacon(int beaconIndex, List<Beacon> beacons, Location deviceLoc){
         int distance = 0;
 
 //        bw = dbgbw;
