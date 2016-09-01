@@ -9,20 +9,32 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/path"
         android:id="@+id/pathText"
-        android:layout_above="@+id/pathToDesk"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:contentDescription="Scegli un percorso" />
+        android:contentDescription="Scegli un percorso"
+        android:layout_marginTop="30dp" />
 
     <ImageButton
-        android:layout_width="300dp"
-        android:layout_height="225dp"
+        android:layout_width="250dp"
+        android:layout_height="187dp"
         android:id="@+id/pathToDesk"
         android:src="@drawable/path_to_desk"
         android:scaleType="fitXY"
         android:clickable="true"
-        android:layout_centerVertical="true"
+        android:contentDescription="Percorso uno scrivania"
+        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:contentDescription="Percorso unico" />
+        android:layout_below="@+id/pathText" />
+
+    <ImageButton
+        android:layout_width="250dp"
+        android:layout_height="187dp"
+        android:id="@+id/path2ToDesk"
+        android:layout_below="@+id/pathToDesk"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:contentDescription="Percorso due scrivania"
+        android:clickable="true"
+        android:src="@drawable/path_2_to_desk"
+        android:scaleType="fitXY" />
 
 </RelativeLayout>
