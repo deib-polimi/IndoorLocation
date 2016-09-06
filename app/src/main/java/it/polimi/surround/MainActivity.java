@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
         //blackList.add("42730:37336");//Beacon 3
  //       de = new DistanceEstimator(this);
         bs = new Buttons ();
+        bs.passMainActivity(this);
         File sd = Environment.getExternalStorageDirectory();
 //        result = new File(sd,  "Surround.txt");
 //        try {
@@ -466,5 +467,17 @@ public class MainActivity extends AppCompatActivity implements UIActivity, Senso
 
     public void speakWords(String speech){
         myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    public void doorClicked(View v){
+        bs.doorClicked(v);
+    }
+
+    public void windowClicked(View v){
+        bs.windowClicked(v);
+    }
+
+    public void deskClicked(View v){
+        bs.deskClicked(v);
     }
 }

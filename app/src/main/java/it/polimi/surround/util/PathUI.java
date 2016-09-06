@@ -59,17 +59,17 @@ import it.polimi.surround.util.DistanceEstimator;
  */
 public class PathUI extends AppCompatActivity implements UIActivity, SensorEventListener, OnInitListener{
 
-    private DistanceEstimator de;
+    //private DistanceEstimator de;
     private MainActivity ma;
     private Buttons bs;
     private CalculatePath cp;
 
 
     {
-        de = new DistanceEstimator(this);
-        ma = new MainActivity();
-        bs = new Buttons();
-        cp = new CalculatePath();
+        //de = new DistanceEstimator(this);
+        //ma = new MainActivity();
+        //bs = new Buttons();
+        //cp = new CalculatePath();
 
     }
 
@@ -1215,5 +1215,11 @@ public class PathUI extends AppCompatActivity implements UIActivity, SensorEvent
     @Override
     public void printText(int id, String text) {
 
+    }
+
+    public void passCallerActivity(MainActivity maExt, Buttons bsExt, CalculatePath cpExt){
+        this.ma = maExt;
+        this.bs = bsExt;
+        this.cp = cpExt;
     }
 }

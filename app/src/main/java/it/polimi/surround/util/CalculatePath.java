@@ -71,8 +71,8 @@ public class CalculatePath extends AppCompatActivity implements UIActivity, Sens
     {
 
         de = new DistanceEstimator(this);
-        ma = new MainActivity();
-        bs = new Buttons();
+        //ma = new MainActivity();
+        //bs = new Buttons();
         deviceLocation = new Location("location");
         deviceLocation.setLatitude(0);
         deviceLocation.setLongitude(0);
@@ -1562,6 +1562,10 @@ public class CalculatePath extends AppCompatActivity implements UIActivity, Sens
 
     }
 
+    public void passCallerActivity(MainActivity maExt, Buttons bsExt){
+        this.ma = maExt;
+        this.bs = bsExt;
+    }
 
 
 }

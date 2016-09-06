@@ -31,7 +31,8 @@
         android:layout_marginTop="10dp"
         android:background="@color/background_material_light"
         android:onClick="doorClicked"
-        android:contentDescription="Partenza dall&apos;ingresso" />
+        android:contentDescription="Partenza dall&apos;ingresso"
+        android:nestedScrollingEnabled="false" />
 
     <ImageButton
         android:layout_width="wrap_content"
